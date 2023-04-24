@@ -1,5 +1,8 @@
 # Presentation Plan
 
+Presentation first page has links that people might want to copy down. 
+So that should probably be up as people file in. 
+
 To initially show people surprising things the CLI can do, you can try the following. 
 
 * Have `cmatrix` running in the background whilst people take their seats. 

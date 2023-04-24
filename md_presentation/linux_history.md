@@ -16,7 +16,7 @@ paging: Slide %d / %d
 ```
 ~~~bash
 figlet -k -w 125 -c  "What is Linux?" 
-jp2a --colors ./assets/tux.jpg | sed -e 's/^/                                            /'
+jp2a --width=20 --colors ./assets/tux.jpg | sed -e 's/^/                                                      /'
 ~~~
 ```
 ```
@@ -24,6 +24,10 @@ jp2a --colors ./assets/tux.jpg | sed -e 's/^/                                   
 figlet -k -w 125 -c "a history"
 ~~~
 ```
+## All info at:
+* Browser to: [https://tinyurl.com/linuxCLIintro](https://tinyurl.com/linuxCLIintro)
+* Or: `git clone https://tinyurl.com/linuxCLIintroGit`
+
 ---
 
 
