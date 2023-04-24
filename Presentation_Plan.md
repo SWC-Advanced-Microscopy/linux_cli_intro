@@ -6,3 +6,5 @@ To initially show people surprising things the CLI can do, you can try the follo
 * Demo `curl wttr.in/London` you can `alias weather='curl wttr.in/London'`
 * Demo `telnet mapscii.me` you can `alias maps='telnet mapscii.me'` (If it works... Telnet version may be broken)
 * Point out these things are not necessarily useful, but they are cool and in that spirit the presentation will be done on the CLI
+* The linux history presentation is optional and puts things into context: GNU, Linux, distros, etc
+* Then main presentation

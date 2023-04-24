@@ -57,7 +57,7 @@ jp2a --fill --colors --width=100 ./assets/sun_logo.jpg
 
 # What Is Linux?
 * From where and when did it come? 
-* GNU. 
+* GNU: 1983. Now almost 400 tools. 
 
 ```
 ~~~bash
@@ -70,7 +70,7 @@ jp2a --fill --colors --width=58 ./assets/gnu.jpg
 
 # What Is Linux?
 * From where and when did it come? 
-* GNU/Linux. 
+* The Linux kernel: 1991. GNU/Linux. 
 
 ```
 ~~~bash
