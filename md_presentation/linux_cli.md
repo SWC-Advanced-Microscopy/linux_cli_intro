@@ -329,9 +329,3 @@ Avoid the GUI file managers if possible. `rsync` over the terminal is better.
 ---
 
 
-
-
-
-
-
-
