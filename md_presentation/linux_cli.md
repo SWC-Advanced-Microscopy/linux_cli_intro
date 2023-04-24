@@ -329,3 +329,11 @@ Avoid the GUI file managers if possible. `rsync` over the terminal is better.
 ---
 
 
+
+
+
+# Where to go from here?
+* Job control with `fg` and `bg`
+* Learn about configuring your shell by editing `.bashrc` (see example in repo)
+* Learn the basics of shell scripts 
+* Consider switching to `zsh` and trying PowerLevel10k
