@@ -32,30 +32,25 @@ brew install slides figlet cmatrix cowsay jp2a
 
 ## Running the presentation 
 The presentation must be executable. 
-If necessary run:
-```bash
-chmod +x md_presentation/linux_cli.md 
-```
+There are short scripts that do this then run it:
 
-Then 
 ```bash
 cd md_presentation
-slides linux_cli.md 
+./run_linux_cli.md 
 ```
 
+or
 
+```bash
+cd md_presentation
+./run_linux_history.md 
+```
 
-## Demos
-To initially show people surprising things the CLI can do, you can try the following. 
-
-* Have `cmatrix` running in the background whilst people take their seats. 
-* Demo `curl wttr.in/London` you can `alias weather='curl wttr.in/London'`
-* Demo `telnet mapscii.me` you can `alias maps='telnet mapscii.me'`
-* Point out these things are not necessarily useful, but they are cool and in that spirit the presentation will be done on the CLI
-
-## Software attendees will need
+## Software for attendees to install
+Those attending the course will need to install the following
 
 On Mac:
+
 ```
 brew install rsync lbzip2 htop nload nano vim ncdu curl wget telnet cowsay
 ```
@@ -70,7 +65,7 @@ For people who fail to achieve either of the above you could set up a Linux serv
 We therefore will do SSH first in the presentation, including how to do it with a shared key. 
 
 
-## Alternatives
+## Alternatives to command line slides
 There are, of course, better alternatives to doing you presentation at the command line. These include:
 * [remark](https://github.com/gnab/remark) is a nice markdown-based system that is pretty simple [and looks good](https://remarkjs.com/#1). 
 * [slidev](https://sli.dev/) is also markdown-based but a little more complicated. 
@@ -78,3 +73,8 @@ There are, of course, better alternatives to doing you presentation at the comma
 
 All the above are really good for presenting code, as they incorporate syntax highlighting and, at least in the case of reveal, allows highlighting and fading of specific lines of code as you move through slides.
 
+
+## Easy Access Links
+* [https://tinyurl.com/linuxCLIintro](https://tinyurl.com/linuxCLIintro) points to the GitHub repo page.
+https://tinyurl.com/linuxCLIintroGit
+* You can clone the repo with `git clone tinyurl.com/linuxCLIintroGit`

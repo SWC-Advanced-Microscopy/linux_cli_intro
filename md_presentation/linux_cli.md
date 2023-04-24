@@ -65,7 +65,6 @@ Let us begin!
 * The Linux command prompt will typically end with a `$` and may be colored.
 * You can also run interactive MATLAB, Python, and R sessions within the terminal.
 * MATLAB running in the command line always has a `>>` prompt.
-* Simple job control:
 
 ```bash
 rob@juicer:~/Dropbox (UCL)/work/Presentations/Linux_CLI_Intro$ ls -l
@@ -124,13 +123,13 @@ Make a big file then try the following
 * `cat`, `head`, `tail`, `less`
 
 ## Editing text files
-* `nano` (The big editors, `vim` and `emacs`, we skip)
+* `nano` (The geeky options are `emacs` and `vim`)
 * Let's edit our file in `nano` then view it. 
 
 
 ## CAUTIONS
-* Spaces in filenames
-* Funny characters
+* Avoid spaces in filenames because they are annoying. 
+* In fact, avoid most funny characters: `&`, `*`, `/`, `\`, quotes, brackets, `|`
 ---
 
 
@@ -232,17 +231,66 @@ ssh USERNAME@juicer.mrsic-flogel.swc.ucl.ac.uk 'dmesg'
 
 
 # Persistent terminals
-SSH sessions die when you log off or are disconnected, so how to initiate things that may run for extended periods?
-* How to work with persistent terminals using `tmux`. What is tmux? 
-* Starting `tmux`, reattaching to the same session. Renaming sessions.
-* Multiple panes. 
+Q. SSH sessions die when you log off or are disconnected, so how to initiate things that may run for extended periods? 
+
+A. `tmux`!
+
+* Starting `tmux`.
+* Renaming sessions with `ctrl-b` then `$` 
+* Leaving the session with `ctrl-b` then `d`
 * Listing available sessions. 
+* Reattaching to the same session: `tmux ls` and `tmux attach -t SESSION_NAME`
+* Multiple panes. Vertical: `ctrl-b` and `%` ; Horizontal: `ctrl-b` and `"`
+* Moving between panes with `ctrl-b` and an arrow key
 * Killing the session. 
+---
+
+
+
+# Persistent terminals
+Q. SSH sessions die when you log off or are disconnected, so how to initiate things that may run for extended periods? 
+
+A. `tmux`!
+
+* Starting `tmux`.
+* Renaming sessions with `ctrl-b` then `$` 
+* Leaving the session with `ctrl-b` then `d`
+* Listing available sessions. 
+* Reattaching to the same session: `tmux ls` and `tmux attach -t SESSION_NAME`
+* Multiple panes. Vertical: `ctrl-b` and `%` ; Horizontal: `ctrl-b` and `"`
+* Moving between panes with `ctrl-b` and an arrow key
+* Killing the session. 
+
+## We can get help at the command line!
+`man tmux`
+
+---
+
+
+
+# Persistent terminals
+Q. SSH sessions die when you log off or are disconnected, so how to initiate things that may run for extended periods? 
+
+A. `tmux`!
+
+* Starting `tmux`.
+* Renaming sessions with `ctrl-b` then `$` 
+* Leaving the session with `ctrl-b` then `d`
+* Listing available sessions. 
+* Reattaching to the same session: `tmux ls` and `tmux attach -t SESSION_NAME`
+* Multiple panes. Vertical: `ctrl-b` and `%` ; Horizontal: `ctrl-b` and `"`
+* Moving between panes with `ctrl-b` and an arrow key
+* Killing the session. 
+
+## We can get help at the command line!
+`man tmux`
 
 ## Let's put it all together
 * Log on to `juicer`
+* Create a `tmux` session and name it. 
 * Open a terminal with two panes. Run MATLAB in one and edit a script in the other.
 * Run the script.
+* Leave the session and kill it. `tmux kill-session -t SESSION_NAME`
 ---
 
 
@@ -252,22 +300,36 @@ SSH sessions die when you log off or are disconnected, so how to initiate things
 
 
 
+# Copying, moving, and deleting
 
-
-# Basic CLI commands
+## Making new directories
+* `mkdir somedir`
+* `mkdir -p directoryOne/nestedDirectory2`
 
 ## Moving/renaming/deleting files
-* `mv`, `rm`, `cp`, `mkdir`
+* Copying with `cp`
+* Deleting with `rm` and `rmdir`
+* Deleting LOTS of stuff `rm -frv`
+* Moving and renaming at the same thing: `mv`
+* Wildcards
 
+## CAUTIONS
+* Deleting files is forever
+---
+
+
+
+
+
+# Using rsync to copy (and compress)
 ## Copying and compressing
 * The wonders of `rsync`. 
 * `rsync` over `ssh`
 * Compressing files using parallel algorithms: `tar` and `lbzip2`. Demo.
 
-
-
-## CAUTIONS
-* Deleting files is forever
+```bash
+tar -I lbzip2 -cvf ARCHIVE_NAME.tar.bz /folder/to/compress
+```
 ---
 
 
@@ -294,9 +356,6 @@ Example:
 ```bash
 curl -s http://brainsaw.mouse.vision/ | grep 'Sample'
 ```
-
-## Scripting
-* Bash scripts exist but are beyond the scope of the course.
 ---
 
 
@@ -336,5 +395,5 @@ Avoid the GUI file managers if possible. `rsync` over the terminal is better.
 * Job control with `fg` and `bg`
 * Learn about configuring your shell by editing `.bashrc` (see example in repo)
 * Learn Emacs keybindings (Mac OS uses them all over the place too)
-* Learn the basics of shell scripts 
+* Learn the basics of shell scripts (BASH scripts)
 * Consider switching to `zsh` and trying PowerLevel10k
