@@ -49,21 +49,28 @@ cd md_presentation
 ## Software for attendees to install
 Those attending the course will need to install the following
 
-On Mac:
-
+### On Mac
+People will [HomeBrew](https://brew.sh/) and then can:
 ```
 brew install rsync lbzip2 htop nload nano vim ncdu curl wget telnet cowsay
 ```
 
-or Linux/WSL:
+### On Windows
+People will need to install Ubuntu on the [Windows Subsystem for Linux(https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview). 
+Then they can follow the `apt` command, below:
+
+
+### Linux
+On Ubuntu/Debian people can:
 
 ```
 apt install rsync lbzip2 htop nload nano vim ncdu curl wget telnet cowsay
 ```
 
-For people who fail to achieve either of the above you could set up a Linux server with a temporary account and have people SSH into that. 
+If none of the above works, you could set up a Linux server with a temporary account and have people SSH into that. 
 We therefore will do SSH first in the presentation, including how to do it with a shared key. 
 
+Attendees can edit the markdown files [Typora](https://typora.io/) or any text editor.
 
 ## Alternatives to command line slides
 There are, of course, better alternatives to doing you presentation at the command line. These include:

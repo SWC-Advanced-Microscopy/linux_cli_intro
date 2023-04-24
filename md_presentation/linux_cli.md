@@ -123,6 +123,7 @@ Make a big file then try the following
 * `cat`, `head`, `tail`, `less`
 
 ## Editing text files
+* Do not edit text file in a word processor?
 * `nano` (The geeky options are `emacs` and `vim`)
 * Let's edit our file in `nano` then view it. 
 
