@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Very simple script to download a JPG from the net and display it as ASCII art
+# e.g.
+# cli_im https://www.sainsburywellcome.org/web/sites/default/files/styles/large_scale_and_crop/public/2018-11/john_0.jpg
+#
+
+curl -s $1 -o  /tmp/im.jpg
+jp2a --fill --color /tmp/im.jpg
