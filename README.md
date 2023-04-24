@@ -83,5 +83,5 @@ All the above are really good for presenting code, as they incorporate syntax hi
 
 ## Easy Access Links
 * [https://tinyurl.com/linuxCLIintro](https://tinyurl.com/linuxCLIintro) points to the GitHub repo page.
-https://tinyurl.com/linuxCLIintroGit
-* You can clone the repo with `git clone tinyurl.com/linuxCLIintroGit`
+
+* You can clone the repo with `git clone https://tinyurl.com/linuxCLIintroGit`
