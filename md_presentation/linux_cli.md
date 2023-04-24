@@ -60,82 +60,12 @@ Let us begin!
 
 
 
-# What Is Linux?
-* From where and when did it come? 
+# What is a command line?
 
-```
-~~~bash
-jp2a --colors --width=120 ./assets/sun_logo.jpg
-~~~
-```
----
-
-
-
-# What Is Linux?
-* From where and when did it come? 
-* GNU. 
-
-```
-~~~bash
-jp2a --colors --width=62 ./assets/gnu.jpg
-~~~
-```
----
-
-
-
-# What Is Linux?
-* From where and when did it come? 
-* GNU/Linux. 
-
-```
-~~~bash
-jp2a --colors --width=120 ./assets/gnu_linux.jpg
-~~~
-```
----
-
-
-
-
-# What Is Linux?
-* From where and when did it come? 
-* GNU/Linux. 
-* What is a "distribution"?
-
-```
-~~~bash
-jp2a --colors --width=70 ./assets/ubuntu.jpg
-~~~
-```
----
-
-
-
-
-# What Is Linux?
-* From where and when did it come? 
-* GNU/Linux. 
-* What is a "distribution"?
-* What is a desktop environment?
-
-```
-~~~bash
-jp2a --colors --width=60 ./assets/kde.jpg
-~~~
-```
----
-
-
-
-
-# What Is Linux?
-* From where and when did it come? 
-* GNU/Linux. 
-* What is a "distribution"?
-* What is a desktop environment?
-* What is the command line?
+* The Linux command prompt will typically end with a `$` and may be colored.
+* You can also run interactive MATLAB, Python, and R sessions within the terminal.
+* MATLAB running in the command line always has a `>>` prompt.
+* Simple job control:
 
 ```bash
 rob@juicer:~/Dropbox (UCL)/work/Presentations/Linux_CLI_Intro$ ls -l
@@ -151,8 +81,7 @@ drwxrwxr-x 3 rob rob 4096 Apr 19 12:51 md_presentation
 
 
 
-## A very quick example
-* The command prompt (make sure it's not MATLAB! `$` not `>>`)
+# Finding your way around
 * Directory structures. Root (`/`) and home (`~`)
 * Navigating directories with `ls`, `pwd`, `cd` 
 * Switches: `ls` vs `ls -l`
@@ -161,6 +90,48 @@ drwxrwxr-x 3 rob rob 4096 Apr 19 12:51 md_presentation
 * Tab for auto-completes
 ---
 
+
+
+# Finding your way around
+* Directory structures. Root (`/`) and home (`~`)
+* Navigating directories with `ls`, `pwd`, `cd` 
+* Switches: `ls` vs `ls -l`
+* Hidden folder and files (`.`) and `ls -a`
+* Wildcards: `*`
+* Tab for auto-completes
+
+
+## Help!
+To get help you can use the `man` command. e.g.
+
+```
+man ls
+```
+---
+
+
+
+
+
+# Basic CLI commands
+
+## Creating files
+* `touch`
+* redirect output to a file. e.g. `ls -l /usr/ >> test` and `ls -l /usr/ > test`
+
+## Viewing the contents of text files
+Make a big file then try the following
+* `cat`, `head`, `tail`, `less`
+
+## Editing text files
+* `nano` (The big editors, `vim` and `emacs`, we skip)
+* Let's edit our file in `nano` then view it. 
+
+
+## CAUTIONS
+* Spaces in filenames
+* Funny characters
+---
 
 
 
@@ -254,38 +225,46 @@ ssh USERNAME@juicer.mrsic-flogel.swc.ucl.ac.uk 'dmesg'
 
 
 
-# Basic CLI commands
 
-## Help!
-You have already seen `ls`, `pwd`, and `cd` and can tab to auto-complete. 
-To get help you can use the `man` command. e.g.
 
-```
-man ls
-```
+
+
+
+
+# Persistent terminals
+SSH sessions die when you log off or are disconnected, so how to initiate things that may run for extended periods?
+* How to work with persistent terminals using `tmux`. What is tmux? 
+* Starting `tmux`, reattaching to the same session. Renaming sessions.
+* Multiple panes. 
+* Listing available sessions. 
+* Killing the session. 
+
+## Let's put it all together
+* Log on to `juicer`
+* Open a terminal with two panes. Run MATLAB in one and edit a script in the other.
+* Run the script.
 ---
 
 
 
-# Basic CLI commands
 
-## Creating files
-* `touch`
-* nano/vim/emacs (just what they are in less than 5 minutes). How to quit from `vi` and `emacs`!
-* redirect output (`>`, `>>`)
-* Pipes
 
-## CAUTIONS
-* Spaces in filenames
-* Funny characters
----
+
+
 
 
 
 # Basic CLI commands
 
 ## Moving/renaming/deleting files
-    * `mv`, `rm`, `cp`, `mkdir`
+* `mv`, `rm`, `cp`, `mkdir`
+
+## Copying and compressing
+* The wonders of `rsync`. 
+* `rsync` over `ssh`
+* Compressing files using parallel algorithms: `tar` and `lbzip2`. Demo.
+
+
 
 ## CAUTIONS
 * Deleting files is forever
@@ -293,11 +272,28 @@ man ls
 
 
 
-# Basic CLI commands
 
-## Displaying/printing file contents
-* `echo`, `cat`, `less`, `head`, `tail` (or `cat ~/.ssh/config | cowsay`)
+
+# Searching for files and text 
+* Finding files with `find`. 
 * `uniq` and `sort`
+* Doing things with the find command: `-exec` flag. 
+* **Piping** to other commands to, for example, count files (`wc`). 
+
+Go over some fancier examples, like how to find all the unique TIFF sizes in a directory.
+Searching for directories vs files. Search for files by size. 
+Using `grep` to search many files for specific text strings. Lots of examples showing useful CLI switches. 
+Finding files. Including fancier stuff like how to find all the unique file sizes in a directory.
+Example:
+
+
+
+
+
+# These operations can work on remote content too!
+```bash
+curl -s http://brainsaw.mouse.vision/ | grep 'Sample'
+```
 
 ## Scripting
 * Bash scripts exist but are beyond the scope of the course.
@@ -323,6 +319,10 @@ For example, a mounted server.
 You will see mount points with `df`.
 [SSH to `juicer` and try]. 
 
+## GUI vs CLI
+Avoid the GUI file managers if possible. `rsync` over the terminal is better.
+
+
 ## Common Mistakes
 * `ls` to mount point directories that do not exit. 
 * Thinking that an unmounted directory is connected to the server.
@@ -331,37 +331,7 @@ You will see mount points with `df`.
 
 
 
-# Searching for files and text 
-* Finding files with `find`. 
-* Doing things with the find command: `-exec` flag. 
-* Piping to other commands to, for example, count files (`wc`). 
-
-Go over some fancier examples, like how to find all the unique TIFF sizes in a directory.
-Searching for directories vs files. Search for files by size. 
-Using `grep` to search many files for specific text strings. Lots of examples showing useful CLI switches. 
-Finding files. Including fancier stuff like how to find all the unique file sizes in a directory.
-Example:
-
-```bash
-curl -s http://brainsaw.mouse.vision/ | grep 'Sample'
-```
----
 
 
 
-
-
-# Copying and compressing
-* How to copy files using `cp` and `rsync`. 
-* Avoid the GUI file managers. 
-* Compressing files using parallel algorithms: `tar` and `lbzip2`. Demo.
-
-
-
-# Persistent terminals
-* How to work with persistent terminals using `tmux`. What is tmux? 
-* Starting `tmux`, reattaching to the same session. Renaming sessions.
-* Multiple panes. 
-* Listing available sessions. 
-* Killing the session. 
 
