@@ -98,7 +98,8 @@ alias j='jobs -l'
 alias lsd="ls -l $1 | grep '^d.*' " #list only directories
 alias duh1='du -h --max-depth 1'
 
-# use the "non-destructive" form of copy, move & remove.
+# use the "non-destructive" form of copy, move & remove. These will ensure you are,
+# for example, asked whether files are to be deleted unless you specify -f
 alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
