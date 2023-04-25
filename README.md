@@ -1,5 +1,7 @@
 # Linux Command Line Intro
 
+This is a presentation on the Linux command line for beginners. 
+It is written is markdown and run at the command line with [slides](https://github.com/maaslalani/slides).
 
 ## Installation
 To run the presentation itself you will need to install [slides](https://github.com/maaslalani/slides) plus some additional programs
