@@ -56,7 +56,7 @@ brew install rsync lbzip2 htop nload nano vim ncdu curl wget telnet cowsay
 ```
 
 ### On Windows
-People will need to install Ubuntu on the [Windows Subsystem for Linux(https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview). 
+People will need to install Ubuntu on the [Windows Subsystem for Linux](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview). 
 Then they can follow the `apt` command, below:
 
 
