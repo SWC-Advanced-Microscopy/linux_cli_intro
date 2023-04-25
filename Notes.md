@@ -571,6 +571,26 @@ find . -name '*recipe*' -type f -exec grep 'ID: OrganGrinder' {} \; | wc -l
 find . -name '*recipe*' -type f -exec grep 'ID: neurovision' {} \;  | wc -l
 ```
 
+### A more advanced exercise
+If you want to get *really* fancy you can list all three microscopes (OrganGrinder, neurovision, brainsaw) with one line:
+```
+find . -name '*recipe*' -type f -exec grep ' ID: [bBnO]' {}  \; | sort |  tr '[:upper:]' '[:lower:]' |  uniq -c
+```
+Exercise to the reader to figure out what that does. 
+Hint: Go back to the start and run each bit up the pipe and have a fiddle. 
+e.g. Look at this
+```
+find . -name '*recipe*' -type f -exec grep ' ID: ' {}  \; 
+```
+vs this:
+```
+find . -name '*recipe*' -type f -exec grep ' ID: [bBnO]' {}  \; 
+```
+Then add the next bit:
+```
+find . -name '*recipe*' -type f -exec grep ' ID: [bBnO]' {}  \; | sort 
+```
+
 You can do similar things to easily return stuff like the number of unique TIFF sizes in a directory.
 
 
