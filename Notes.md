@@ -10,18 +10,18 @@ It will look pretty viewed on GitHub or in editors such as [Typora](https://typo
 # Finding your way around
 ## Directory structures
 The file system is a tree of nested directories. 
-The final common node is known as "root" (`/`). 
-You can list all directories that are nested right under root with:
+The common common node at the base of the tree is known as "root" (`/`). 
+You can view all directories right under root with the **l**i**s**t command:
 
-```bash
+```
 $ ls /
 ```
-**NOTE**: the `$` denotes the command line (BASH) prompt and you do not type it in.
+**NOTE**: the `$` denotes the command line (e.g. bash or zsh) prompt and you do not type it in.
 
-The `~` denotes the user's (your own) "home" directory, where you keep private files. 
-We can do:
+The `~` symbol denotes your own "home" directory, where you keep private files. 
+We can list this in the same way:
 
-```bash
+```
 $ ls ~
 ```
 
@@ -29,9 +29,9 @@ $ ls ~
 It has so-called "switches" to modify its behavior.
 e.g. "long" output with `-l`
 
-```bash
+```
 $ ls -l ~
-❯ # time passses
+
 total 212
 drwx------  2 rob rob   4096 Sep  2  2021  AnyDesk
 -rw-rw-r--  1 rob rob 103554 May 26  2022  BaslerDemo.ipynb
@@ -47,28 +47,26 @@ drwx------ 12 rob rob   4096 Apr  7  2022  Dropbox
 ```
 
 The first block of stuff (`drwxr-xr-x`) are permissions (who can read, write, or execute). 
-Then we have info on who owns the files (`rob`). 
-Then number of directories linked to it. 
+The single number that follows is the number of directories linked to it. 
+Then we have info on who owns the files (`rob`) and what user group they belong to (`rob`). 
 Then the size in bytes. 
 Then when the file was last modified. 
 Finally the name. 
 
-How do we know what switches `ls` will accept? 
-You can ask!
-To get help you can use the `man` command. e.g.
+The **man**ual command will tell us what switches `ls` will accept and how it works:
 
 ```
-man ls
+$ man ls
 ```
 
-You can return the name of the current directory with `pwd` (print working directory)
+You can return the name of the current directory with `pwd` (**p**rint **w**orking **d**irectory)
 
-```bash
+```
 $ pwd
 ```
 
-and  `ls` with no directory input argument lists the contents:
-```bash
+and  `ls` with no directory input argument lists the contents of the current directory:
+```
 $ ls
 ```
 
@@ -76,14 +74,15 @@ $ ls
 You can change directory with `cd`.
 e.g.
 
-```bash
+```
 $ cd /etc
 ```
 
-Folders and files that start with a `.` are hidden by default. 
-The `-a` (all) switch to `ls` will show them. 
-Compare `ls ~` to `ls -a ~`. 
-You can combine switches: `ls -la ~`
+## Hidden files and combining switches
+* Folders and files that start with a `.` are hidden by default. 
+* The `-a` (all) switch to `ls` will show hidden files.
+* Compare `ls ~` to `ls -a ~`. 
+* You can combine switches: `ls -la ~`
 
 ## Auto-complete and wild cards
 Try typing `ls` then press tab. 
@@ -114,14 +113,29 @@ $ ls -l TEST
 -rw-rw-r-- 1 rob rob 0 Apr 24 15:22 TEST
 ```
 
-* redirect output to a file. e.g. `ls -l /usr/ >> test` and `ls -l /usr/ > test`
+## Redirecting "standard ouput"
+All the stuff that's been appearing on the command line is what is known as "standard output."
+We can redirect this to a file with the `>` and `>>` operators.
+The `>` will empty the file before filling it. 
+The `>>` will append if the file already exists. 
+e.g.
+
+```
+$ ls -l /usr/ > test
+$ cat test
+$ ls -l /usr/ >> test
+$ cat test
+$ ls -l /usr/ > test
+$ cat test
+```
+
 
 ## Viewing the contents of text files
 Make a big file:
 
-```bash
+```
 $ ls -lkh /usr/bin > BINFILES
- ```
+```
 
 Let's see what's in it. 
 The first 10 lines:
@@ -158,9 +172,9 @@ The `less` command lets you scroll through slowly.
 
 
 ## Editing text files
-* Do not edit text file in a word processor! You want to be creating and saving plain text.
+* Do not edit text files in a word processor: create and save as plain text.
 * Try `nano` for editing at the CLI at first. If you find yourself doing this a lot, the geeky power-tools options are `emacs` and `vim`. 
-* You can use an external editor like SublimeText or Notepad++ but this is tricky to do when you logged in to a PC remotely.
+* You can use an external editor like [SublimeText](https://www.sublimetext.com/) or [Pulsar](https://pulsar-edit.dev/), but this is tricky to do when you logged in to a PC remotely.
 
 
 ## CAUTIONS
@@ -268,8 +282,9 @@ This creates a new, blank, `tmux` session.
 The key combination `ctrl` and `b` pressed together (`ctrl-b`) puts `tmux` into command mode. 
 It interprets the next as a command. 
 Two useful commands to learn first are:
+
 * Renaming sessions with `ctrl-b` then `$` then enter a new name and press return.
-* Leaving the session (so it can be resumed) with `ctrl-b` then `d`
+* **D**isconnecting from the session (so it can be resumed) with `ctrl-b` then `d`
 
 ## Listing sessions and re-connecting
 If you have left your `tmux` session and dormant sessions running, you can list them:
@@ -469,7 +484,9 @@ tar -I lbzip2 -cv -f ARCHIVE_NAME.tar.bz /folder/to/compress
 
 # Searching for files
 This section will just provide examples showing how commands can be chained together to do things that are surprisingly complicated. 
-Let's SSH to joiner and go to the directory containing summaries of all the acquisitions done on BrainSaw
+The main take home point is that this sort of thing is possible, we won't go into all the details why everything here works. 
+Let's SSH to joiner and go to the directory containing summaries of all the acquisitions done on BrainSaw.
+
 ```
 $ /mnt/data/BakingTrayStacks/ADMIN/acquisitionStats
 ```
@@ -488,7 +505,7 @@ $ find . -name '*recipe*'
 ```
 
 Woah! That's a lot of stuff!
-We can "pipe" the output of `find` to `wc`, the word count, command using the `|` operator:
+We can "pipe" the standard output of `find` to `wc`, the word count, command using the `|` operator:
 
 ```
 $ find . -name '*recipe*' | wc -l
@@ -553,10 +570,11 @@ You can do similar things to easily return stuff like the number of unique TIFF 
 
 
 
-# These operations can work on remote content too!
+### These operations can work on remote content too!
 ```bash
 curl -s http://brainsaw.mouse.vision/ | grep 'Sample'
 ```
+
 ---
 
 
@@ -597,4 +615,5 @@ Avoid the GUI file managers if possible. `rsync` over the terminal is better.
 * Learn about configuring your shell by editing `.bashrc` (see example in repo)
 * Learn Emacs keybindings (Mac OS uses them all over the place too)
 * Learn the basics of shell scripts (BASH scripts)
-* Consider switching to `zsh` and trying PowerLevel10k
+* Further reading on the above at the [Software Carpentry Course](https://swcarpentry.github.io/shell-novice/01-intro/index.html)
+* Try some fancier modern stuff: switch from `bash` to `zsh` and try [PowerLevel10k](https://github.com/romkatv/powerlevel10k) and [fzf](https://github.com/junegunn/fzf).

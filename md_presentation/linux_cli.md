@@ -84,8 +84,6 @@ drwxrwxr-x 3 rob rob 4096 Apr 19 12:51 md_presentation
 * They can be chained together to very simply build "one line programs". 
 * You can execute your own Python functions at the command line and they will integrate seamlessly. 
 * The Linux (e.g. bash/zsh) CLIs are now cross-platform and much nicer than the Windows terminal.
-* You can also run interactive MATLAB, Python, and R sessions within the terminal.
-* (MATLAB running in the command line always has a `>>` prompt.)
 * Almost all commands you will see today have many more features than we have time to cover.
 ---
 
