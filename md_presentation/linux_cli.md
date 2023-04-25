@@ -95,8 +95,9 @@ drwxrwxr-x 3 rob rob 4096 Apr 19 12:51 md_presentation
 # Finding your way around
 * Directory structures. Root (`/`) and home (`~`)
 * Navigating directories with `ls`, `pwd`, `cd` 
+* Difference between `.` and `..`. e.g. `cd ../`
 * Switches: `ls` vs `ls -l`
-* Hidden folder and files (`.`) and `ls -a`
+* Hidden folder and files start with the "." character and `ls -a` shows them
 * Wildcards: `*`
 * Tab for auto-completes
 ---

@@ -78,6 +78,13 @@ e.g.
 $ cd /etc
 ```
 
+The symbol `.` means current directory and `..` means one directory up. 
+So to go up one directory you can:
+
+```
+$ cd ../
+```
+
 ## Hidden files and combining switches
 * Folders and files that start with a `.` are hidden by default. 
 * The `-a` (all) switch to `ls` will show hidden files.
@@ -254,7 +261,7 @@ Obviously edit the string `YOUR_USER_NAME` to reflect your actual user name on t
 Now you can:
 ```
 $ ssh YOUR_USER_NAME@juicer
-``` 
+```
 and all you have to do is type in your bastion password. 
 You will be automatically teleported to `juicer`.
 
