@@ -74,9 +74,6 @@ We therefore will do SSH first in the presentation, including how to do it with 
 
 Attendees can edit the markdown files [Typora](https://typora.io/) or any text editor.
 
-## Also to do in advance
-All attendees should make sure they can ssh to bastion. 
-
 
 ## Alternatives to command line slides
 There are, of course, better alternatives to doing you presentation at the command line. These include:
