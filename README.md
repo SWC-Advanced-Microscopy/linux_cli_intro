@@ -76,7 +76,7 @@ Attendees can edit the markdown files [Typora](https://typora.io/) or any text e
 
 
 ## Alternatives to command line slides
-There are, of course, better alternatives to doing you presentation at the command line. These include:
+There are, of course, better alternatives to doing your presentation at the command line. These include:
 * [remark](https://github.com/gnab/remark) is a nice markdown-based system that is pretty simple [and looks good](https://remarkjs.com/#1). 
 * [slidev](https://sli.dev/) is also markdown-based but a little more complicated. 
 * [reveal.js](https://github.com/hakimel/reveal.js/) is an HTML/CSS-based system that perhaps [looks better](https://revealjs.com/demo/) than the above but is a little more complicated. 
